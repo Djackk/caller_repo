@@ -10,11 +10,6 @@ on:
         type: choice
         options:
           - dev
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened]
 jobs:
   setup-env:
     uses: Djackk/shared_workflows/.github/workflows/called_workflow.yaml@v1.0.0
