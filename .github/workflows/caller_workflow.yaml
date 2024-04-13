@@ -1,0 +1,24 @@
+name: Caller Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      Environment:
+        description: 'Environment'
+        default: 'dev'
+        required: true
+        type: choice
+        options:
+          - dev
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  create-proxy-artifact:
+    uses: Djackk/shared_workflows/.github/workflows/called_workflow.yaml@v1.0.0
+    with:
+      Environment: ${{github.event.inputs.Environment}}
+    secrets:
+      JOB_TOKEN: ${{ secrets.JOB_TOKEN }}
