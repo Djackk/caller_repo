@@ -1,0 +1,18 @@
+version: 2
+registries:
+  github-registry:
+    type: git
+    url: https://github.com
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    registries:
+      - github-registry
+    schedule:
+      interval: daily
+    commit-message:
+      prefix: "Dependabot-alert"
+      include: scope
+    allow:
+        - dependency-name: "Djack/*"
+          dependency-type: "direct"
