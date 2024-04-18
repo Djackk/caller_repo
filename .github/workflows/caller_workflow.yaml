@@ -12,7 +12,7 @@ on:
           - dev
 jobs:
   setup-env:
-    uses: Djackk/shared_workflows/.github/workflows/called_workflow.yaml@v1.0.0
+    uses: Djackk/shared_workflows/.github/workflows/called_workflow.yaml@v1.0.1
     with:
       Environment: ${{github.event.inputs.Environment}}
     secrets:
