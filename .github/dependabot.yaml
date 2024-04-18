@@ -16,5 +16,5 @@ updates:
       prefix: "Dependabot-alert"
       include: scope
     allow:
-        - dependency-name: "Djack/*"
+        - dependency-name: "Djackk/*"
           dependency-type: "direct"
